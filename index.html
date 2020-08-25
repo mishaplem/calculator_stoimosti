@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+    <html lang="ru">
+        <head>
+         <meta charset="utf-8">
+         <title>Calc</title>
+        </head>
+
+        <body>
+          <div>
+            <p></p>
+          </div>
+          <form method="POST" action="">
+            <label for="width">Ширина (м)</label>
+            <input id="width" type="number" name="width" value="0" min="1" required><br><br>
+
+            <label for="height">Длина (м)</label>
+            <input id="height" type="number" name="height" value="0" min="1" required><br><br>
+
+            <label for="quantity">Количество</label>
+            <input id="quantity" type="number" name="quantity" value="1" min="1" required><br><br>
+
+            <label for="printing_method">Способ печати</label>
+            <select name="printing_method" id="printing_method"/>
+                <option value="1">Широкоформатная печать</option>
+                <option value="2">Интерьерная печать</option>
+                <option value="3">UV-печать</option>
+            </select><br><br>
+
+            <label for="material">Материалы</label>
+            <select name="material" id="material" required/>
+            <option value="0">Выберите материал</option>
+            <option value="1">пленка</option>
+            <option value="2">баннер литой 510 гр</option>
+            <option value="3">баннер ламинированный 440 гр</option>
+            <option value="4">баннерная сетка</option>
+            <option value="5">бумага</option>
+            </select>
+
+            <div>
+              <p>Люверсы</p>
+              <label>Нет<input id="no" type="radio" name="luvers" checked></label>
+              <label>Через 25 см<input id="c25" type="radio" name="luvers" value="1"></label>
+              <label>Через 30 см<input id="c30" type="radio" name="luvers" value="2"></label>
+              <label>Через 50 см<input id="c50" type="radio" name="luvers" value="3"></label>
+              <label>По углам<input id="ug" type="radio" name="luvers" value="4"></label><br><br>
+              <label>Шнур<input id="shnur" type="checkbox" name="shnur"></label><br><br>
+              <label>Проклейка<input id="proklei" type="checkbox" name="proklei"></label><br><br>
+            </div>
+
+            <button id="end">Рассчитать</button><br><br>
+
+            <label>Итого: <span id="itogo">0</span> &#8381;*</label>
+            <p>
+              * Цены предварительные.
+              Для более точного расчета стоимости заказа обратитесь к менеджеру компании Art Line
+            </p>
+
+            <button id="oform" visible="hidden">Оформить</button>
+              
+          </form>  
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
