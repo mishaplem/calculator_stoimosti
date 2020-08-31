@@ -2,64 +2,117 @@
     <html lang="ru">
         <head>
          <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+         <![endif]-->
          <title>Calc</title>
         </head>
 
         <body>
-          <div>
-            <p></p>
-          </div>
-          <form method="POST" action="">
-            <label for="width">Ширина (м)</label>
-            <input id="width" type="number" name="width" value="0" min="1" required><br><br>
-
-            <label for="height">Длина (м)</label>
-            <input id="height" type="number" name="height" value="0" min="1" required><br><br>
-
-            <label for="quantity">Количество</label>
-            <input id="quantity" type="number" name="quantity" value="1" min="1" required><br><br>
-
-            <label for="printing_method">Способ печати</label>
-            <select name="printing_method" id="printing_method"/>
-                <option value="1">Широкоформатная печать</option>
-                <option value="2">Интерьерная печать</option>
-                <option value="3">UV-печать</option>
-            </select><br><br>
-
-            <label for="material">Материалы</label>
-            <select name="material" id="material" required/>
-            <option value="0">Выберите материал</option>
-            <option value="1">пленка</option>
-            <option value="2">баннер литой 510 гр</option>
-            <option value="3">баннер ламинированный 440 гр</option>
-            <option value="4">баннерная сетка</option>
-            <option value="5">бумага</option>
-            </select>
-
-            <div>
-              <p>Люверсы</p>
-              <label>Нет<input id="no" type="radio" name="luvers" checked></label>
-              <label>Через 25 см<input id="c25" type="radio" name="luvers" value="1"></label>
-              <label>Через 30 см<input id="c30" type="radio" name="luvers" value="2"></label>
-              <label>Через 50 см<input id="c50" type="radio" name="luvers" value="3"></label>
-              <label>По углам<input id="ug" type="radio" name="luvers" value="4"></label><br><br>
-              <label>Шнур<input id="shnur" type="checkbox" name="shnur"></label><br><br>
-              <label>Проклейка<input id="proklei" type="checkbox" name="proklei"></label><br><br>
+          <div class="container-sm">
+            <div class="row">
+              <div class="col-sm"></div>
+              <div class="col-sm"><p class="lead">Калькулятор стоимости</p></div>
+              <div class="col-sm"></div>
             </div>
 
-            <button id="end">Рассчитать</button><br><br>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-6">
+          <form method="POST" action="">
+            <div class="form-group">
+              <label for="width">Ширина (м)</label>
+              <input id="width" class="form-control" type="number" name="width" value="0" min="1" required>
+            </div>
+
+            <div class="form-group">
+              <label for="height">Длина (м)</label>
+              <input id="height" class="form-control" type="number" name="height" value="0" min="1" required>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Количество</label>
+              <input id="quantity" class="form-control" type="number" name="quantity" value="1" min="1" required>
+            </div>
+
+            <div class="form-group">
+            <label for="printing_method">Способ печати</label>
+              <select name="printing_method" id="printing_method" class="form-control"/>
+                  <option value="1">Широкоформатная печать</option>
+                  <option value="2">Интерьерная печать</option>
+                  <option value="3">UV-печать</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="material">Материалы</label>
+              <select name="material" id="material" required class="form-control"/>
+                <option value="0">Выберите материал</option>
+                <option value="1">пленка</option>
+                <option value="2">баннер литой 510 гр</option>
+                <option value="3">баннер ламинированный 440 гр</option>
+                <option value="4">баннерная сетка</option>
+                <option value="5">бумага</option>
+              </select>
+            </div>
+
+            <div id="togle" style="display: none;">
+              <p>Люверсы</p>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="no" type="radio" name="luvers" checked>
+                <label class="form-check-label" for="no">Нет</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="c25" type="radio" name="luvers" value="1">
+                <label class="form-check-label" for="c25">Через 25 см</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="c30" type="radio" name="luvers" value="2">
+                <label class="form-check-label" for="c30">Через 30 см</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="c50" type="radio" name="luvers" value="3">
+                <label class="form-check-label" for="c50">Через 50 см</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="ug" type="radio" name="luvers" value="4">
+                <label class="form-check-label" for="ug">По углам</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" id="shnur" type="checkbox" name="shnur">
+                <label class="form-check-label" for="shnur">Шнур</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" id="proklei" type="checkbox" name="proklei">
+                <label class="form-check-label" for="proklei">Проклейка</label>
+              </div>
+            </div>
+
+            <button id="end" type="button" class="btn btn-dark">Рассчитать</button> <button id="oform" type="button" class="btn btn-dark" style="display: none;">Оформить</button><br><br>
 
             <label>Итого: <span id="itogo">0</span> &#8381;*</label>
             <p>
               * Цены предварительные.
               Для более точного расчета стоимости заказа обратитесь к менеджеру компании Art Line
             </p>
-
-            <button id="oform" visible="hidden">Оформить</button>
               
-          </form>  
+          </form> 
+          </div>
+          <div class="col-sm-3"></div> 
+          </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -33,6 +33,10 @@ switch (print_method) {
     break;
 
 }
+
+if ($("#material").val() == 0){
+  $("#togle").hide(200);
+}
 });
 
 $('#end').click(function(e){
@@ -63,6 +67,7 @@ $('#end').click(function(e){
       break;
     };
     $('#itogo').text(String(prom));
+    $("#oform").show(300);
   } else if ($("#printing_method").val() == 1) {
       switch ($("#material").val()){
         
@@ -87,6 +92,7 @@ $('#end').click(function(e){
         break;
       };
       $('#itogo').text(String(prom)); 
+      $("#oform").show(300);
     } else if ($("#printing_method").val() == 2) {
       switch ($("#material").val()){
         
@@ -119,6 +125,7 @@ $('#end').click(function(e){
         break;
       };
     $('#itogo').text(String(prom));
+    $("#oform").show(300);
   }
 });
 
@@ -144,7 +151,12 @@ function luvers_shnur_proklei(cena, in_width, in_height, in_quantity){
         return prom;
 };
 
-/*var itog = parseInt($('#itogo').text());
-if (itog > 0){
-  $('#end').html('Пересчитать');
-}*/
+$("#material").click(function(){
+var material = $("#material").val();
+  if ((material == 2) || (material == 3) || (material == 7) || (material == 8)){
+    $("#togle").show(300);
+  } else {
+    $("#togle").hide(200);
+  }
+});
+
